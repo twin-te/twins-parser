@@ -1,3 +1,6 @@
-export function parseKDB() {
-  console.log("YET");
+type Course = {};
+
+export function parseKDB(csvText: string): Course[] {
+  console.log(csvText);
+  return [];
 }
