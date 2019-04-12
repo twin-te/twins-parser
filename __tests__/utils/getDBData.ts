@@ -12,7 +12,7 @@ function getfileContentOrNull(filename: string): Promise<Buffer> {
       if (error && error.code !== "ENOENT") {
         reject(createError(filename, error));
       } else {
-        if (error) throw error
+        if (error) throw error;
         resolve(data);
       }
     });
