@@ -1,5 +1,5 @@
 {
-  "name": "twintail-js",
+  "name": "twins-parser",
   "version": "1.0.0",
   "author": "Sosuke Suzuki <aosukeke@gmail.com>",
   "main": "dist/index.js",
@@ -39,8 +39,5 @@
     "transform": {
       ".ts": "ts-jest"
     }
-  },
-  "dependencies": {
-    "neat-csv": "^4.0.0"
   }
 }
