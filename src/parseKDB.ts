@@ -1,6 +1,5 @@
 import neatCsv from "neat-csv";
 
-// TODO: 講座の型を作る
 type Course = {
   way: string;
   id: string;
