@@ -12,8 +12,8 @@ twinsとkdbからダウンロードしたCSVのためのパーサーです。
 
 TwinsからダウンロードしたCSVの文字列を受け取って、科目番号の配列が返します。
 
-### `parseKDB(csvText: string): Cource[]`
-KDBからダウンロードしたCSVの文字列を受け取って、`Cource`型の配列が返します。
+### `parseKDB(csvText: string): Course[]`
+KDBからダウンロードしたCSVの文字列を受け取って、`Course`型の配列が返します。
 が、こちらは間違いなく仕様が変わるので実質WIP。
 
 ## TODO
