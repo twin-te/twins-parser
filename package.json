@@ -9,18 +9,35 @@
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
-    "format": "prettier --write \"{,src/**/}*.{ts,md,js,json}\""
+    "format": "prettier --write \"{,__tests__/**/,src/**/}*.{ts,md,js,json}\"",
+    "test": "jest",
+    "test:watch": "yarn test --watch"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/neat-csv": "^4.0.0",
+    "jest": "^24.7.1",
     "prettier": "^1.16.4",
     "rollup": "^1.10.0",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.20.1",
     "rollup-plugin-url": "^2.2.1",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.4.3"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "jest": {
+    "testRegex": "(/__tests__/.*\\.spec\\.ts)$",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "./tsconfig.json"
+      }
+    },
+    "transform": {
+      ".ts": "ts-jest"
+    }
+  }
 }
