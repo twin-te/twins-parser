@@ -1,4 +1,4 @@
-export function parseCsv(csvText: string): string[] {
+export function parseTwins(csvText: string): string[] {
   function generateError() {
     return new Error("Invalid CSV.");
   }

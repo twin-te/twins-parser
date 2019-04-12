@@ -1,15 +1,15 @@
-import { parseCsv } from "../src";
+import { parseTwins } from "../src";
 
 function expectToThrow(csv: string) {
   expect(() => {
-    parseCsv(csv);
+    parseTwins(csv);
   }).toThrow();
 }
 
-describe("parseCSV", () => {
+describe("parseTwins", () => {
   it("returns array of string", () => {
     const csv = '"AAAAAAA"\n"BBBBBBB"\n"CCCCCCC"';
-    const results = parseCsv(csv);
+    const results = parseTwins(csv);
     expect(results).toEqual(["AAAAAAA", "BBBBBBB", "CCCCCCC"]);
   });
 

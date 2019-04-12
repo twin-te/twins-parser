@@ -39,5 +39,8 @@
     "transform": {
       ".ts": "ts-jest"
     }
+  },
+  "dependencies": {
+    "neat-csv": "^4.0.0"
   }
 }
