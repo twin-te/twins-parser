@@ -8,15 +8,17 @@
   "license": "MIT",
   "scripts": {
     "start": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "format": "prettier --write \"{,src/**/}*.{ts,md,js,json}\""
   },
   "devDependencies": {
-    "typescript": "^3.4.3",
+    "prettier": "^1.16.4",
     "rollup": "^1.10.0",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.20.1",
-    "rollup-plugin-url": "^2.2.1"
+    "rollup-plugin-url": "^2.2.1",
+    "typescript": "^3.4.3"
   },
   "files": [
     "dist"
