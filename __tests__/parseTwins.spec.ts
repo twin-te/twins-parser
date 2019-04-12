@@ -1,4 +1,4 @@
-import { parseTwins } from "../src";
+import { parseTwins } from "../src/parseTwins";
 
 function expectToThrow(csv: string) {
   expect(() => {
