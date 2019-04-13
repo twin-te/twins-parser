@@ -1,4 +1,4 @@
-import neatCsv from "neat-csv";
+import { parseCSV } from "./parseCSV";
 
 type Course = {
   way: string;
@@ -15,7 +15,7 @@ type Course = {
 };
 
 export async function parseKDB(csvText: string): Promise<Course[]> {
-  const parsed = await neatCsv(csvText);
+  const parsed = await parseCSV(csvText);
   const lines = parsed.map((row, i) =>
     i === 0 ? Object.keys(row) : Object.values(row)
   );
