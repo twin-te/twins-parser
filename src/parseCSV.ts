@@ -27,20 +27,20 @@ class CSVParser {
     do {
       items.push(this.nextItem());
       char = this.nextChar();
-    } while (char != "\n");
+    } while (char !== "\n");
 
     return items;
   }
 
   nextItem(): string {
     const firstChar = this.nextChar();
-    if (firstChar != '"') {
+    if (firstChar !== '"') {
       throw new Error(`Unexpected char ${firstChar} is found.`);
     }
 
     let item = "";
     let char = this.nextChar();
-    while (char != '"') {
+    while (char !== '"') {
       item += char;
       char = this.nextChar();
     }
