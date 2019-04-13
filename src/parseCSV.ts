@@ -27,7 +27,7 @@ class CSVParser {
     do {
       items.push(this.nextItem());
       char = this.nextChar();
-    } while (char !== "\n");
+    } while (char !== "\n" && char !== "");
 
     return items;
   }
@@ -35,7 +35,7 @@ class CSVParser {
   nextItem(): string {
     const firstChar = this.nextChar();
     if (firstChar !== '"') {
-      throw new Error(`Unexpected char ${firstChar} is found.`);
+      throw new Error(`Unexpected char "${firstChar}" is found.`);
     }
 
     let item = "";
@@ -44,7 +44,6 @@ class CSVParser {
       item += char;
       char = this.nextChar();
     }
-
     return item;
   }
 
