@@ -35,7 +35,7 @@ class CSVParser {
   nextItem(): string {
     const firstChar = this.nextChar();
     if (firstChar != '"') {
-      console.error(`Unexpected char ${firstChar} is found.`);
+      throw new Error(`Unexpected char ${firstChar} is found.`);
     }
 
     let item = "";
