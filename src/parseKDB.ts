@@ -18,13 +18,13 @@ export function parseKDB(csvText: string): Course[] {
   const courses: Course[] = [];
 
   for (const row of parsed) {
-    // Convert the year represented by a string like "1・2" into an array
+    // Convert from a string like "1・2" to an array
     const year = row[4].split("・");
 
-    // Convert the class rooms represented by a string like "4A304,3A204" into an array
+    // Convert from a string like "4A304,3A204" to an array
     const classRooms = row[7].split(",");
 
-    // Convert the class rooms represented by a string like "山田 太郎,田中 花子" into an array
+    // Convert from a string like "山田 太郎,田中 花子" to an array
     const instructors = row[8].split(",");
 
     const course: Course = {
