@@ -19,6 +19,8 @@ Twins からダウンロードした CSV の文字列を受け取って、講座
 例
 
 ```ts
+import { parseTwins } from "twins-parser";
+
 // twinsからダウンロードしたCSVファイルをデコードしてテキストを取得してください
 const twinsCSV = getTwinsCSV();
 const parsed = parseTwins(csv); // e.g. ["AAAAAAA", "BBBBBBB", "CCCCCCC"]
@@ -47,6 +49,8 @@ type Course = {
 例
 
 ```ts
+import { parseKDB } from "twins-parser";
+
 // kdbからダウンロードしたCSVファイルをデコードしてテキストを取得してください
 const csv = getKDBCSV();
 const parsed = parseKDB(csv); /* e.g.
