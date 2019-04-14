@@ -1,4 +1,4 @@
-export async function parseCSV(csvText: string): Promise<string[][]> {
+export function parseCSV(csvText: string): string[][] {
   return new CSVParser(csvText).parse();
 }
 
@@ -11,7 +11,7 @@ class CSVParser {
     this.text = text;
   }
 
-  async parse(): Promise<string[][]> {
+  parse(): string[][] {
     const rows: string[][] = [];
     while (this.cursor < this.text.length) {
       rows.push(this.nextRow());

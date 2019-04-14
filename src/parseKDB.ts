@@ -14,8 +14,8 @@ type Course = {
   remark: string;
 };
 
-export async function parseKDB(csvText: string): Promise<Course[]> {
-  const parsed = await parseCSV(csvText);
+export function parseKDB(csvText: string): Course[] {
+  const parsed = parseCSV(csvText);
   const lines = parsed.map((row, i) =>
     i === 0 ? Object.keys(row) : Object.values(row)
   );
