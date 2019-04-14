@@ -1,5 +1,7 @@
 # twins-parser
 
+[![CircleCI](https://circleci.com/gh/sosukesuzuki/twins-parser.svg?style=svg)](https://circleci.com/gh/sosukesuzuki/twins-parser)
+
 twins と kdb からダウンロードした CSV のためのパーサーです。
 
 ## インストール
