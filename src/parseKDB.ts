@@ -1,4 +1,4 @@
-import { parseCSV } from "./parseCSV";
+import { parseCSV } from "./lib/parseCSV";
 
 type Course = {
   courseNumber: string;

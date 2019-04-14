@@ -1,4 +1,4 @@
-import { parseCSV } from "../src/parseCSV";
+import { parseCSV } from "../src/lib/parseCSV";
 
 describe("parseCSV", () => {
   it("returns array of single line csv", async () => {

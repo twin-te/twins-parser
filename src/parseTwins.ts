@@ -1,4 +1,4 @@
-import { parseCSV } from "./parseCSV";
+import { parseCSV } from "./lib/parseCSV";
 
 export function parseTwins(csvText: string): string[] {
   function generateError() {
