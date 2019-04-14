@@ -62,3 +62,7 @@ const parsed = parseKDB(csv); /* e.g.
 }
 */
 ```
+
+## ライセンス
+
+MIT
