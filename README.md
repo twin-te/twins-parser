@@ -6,7 +6,9 @@ twins と kdb からダウンロードした CSV のためのパーサーです�
 
 ## インストール
 
-のちのち npm にパブリッシュします。
+```sh
+$ npm install --save twins-parser
+```
 
 ## ドキュメント
 
