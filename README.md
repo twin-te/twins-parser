@@ -12,9 +12,53 @@ twins と kdb からダウンロードした CSV のためのパーサーです�
 
 ### `parseTwins(csvText: string): string[]`
 
-Twins からダウンロードした CSV の文字列を受け取って、科目番号の配列が返します。
+Twins からダウンロードした CSV の文字列を受け取って、講座番号の配列を返します。
+
+例
+
+```ts
+// twinsからダウンロードしたCSVファイルをデコードしてテキストを取得してください
+const twinsCSV = getTwinsCSV();
+const parsed = parseTwins(csv); // e.g. ["AAAAAAA", "BBBBBBB", "CCCCCCC"]
+```
 
 ### `parseKDB(csvText: string): Course[]`
 
-KDB からダウンロードした CSV の文字列を受け取って、`Course`型の配列が返します。
-が、こちらは間違いなく仕様が変わるので実質 WIP。
+KDB からダウンロードした CSV の文字列を受け取って、`Course`型の配列を返します。
+`Course`型は以下のように定義されています。
+
+```ts
+type Course = {
+  courseNumber: string;
+  courseName: string;
+  credits: string;
+  year: string[];
+  term: string;
+  weekdayAndPeriod: string;
+  classRooms: string[];
+  instructors: string[];
+  courseOverview: string;
+  remarks: string;
+};
+```
+
+例
+
+```ts
+// kdbからダウンロードしたCSVファイルをデコードしてテキストを取得してください
+const csv = getKDBCSV();
+const parsed = parseKDB(csv); /* e.g.
+{
+  courseNumber: "AAAAAAA",
+  courseName: "講座の名前",
+  credits: "2.0",
+  year: ["1", "2"],
+  term: "春AB",
+  weekdayAndPeriod: "月1,2",
+  classRooms: ["BBBBB", "CCCCC"],
+  instructors: ["山田 太郎", "田中 花子"],
+  courseOverview: "講座の概要",
+  remarks: "備考"
+}
+*/
+```
