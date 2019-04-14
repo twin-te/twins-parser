@@ -19,7 +19,11 @@ describe("parseCSV", () => {
 
   it("throws error with invalid csv", async () => {
     const csvText = '"item1",,"item2"';
-    const expectedError = new Error(`Unexpected char "," is found.`);
-    expect(parseCSV(csvText)).rejects.toEqual(expectedError);
+    try {
+      parseCSV(csvText);
+    } catch (error) {
+      const expectedError = new Error(`Unexpected char "," is found.`);
+      expect(error).toEqual(expectedError);
+    }
   });
 });
