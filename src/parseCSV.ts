@@ -3,9 +3,9 @@ export function parseCSV(csvText: string): string[][] {
 }
 
 class CSVParser {
-  text: string;
+  private text: string;
 
-  cursor: number = 0;
+  private cursor: number = 0;
 
   constructor(text: string) {
     this.text = text;
@@ -20,7 +20,7 @@ class CSVParser {
     return rows;
   }
 
-  nextRow(): string[] {
+  private nextRow(): string[] {
     const items: string[] = [];
 
     let char: string = "";
@@ -32,7 +32,7 @@ class CSVParser {
     return items;
   }
 
-  nextItem(): string {
+  private nextItem(): string {
     const firstChar = this.nextChar();
     if (firstChar !== '"') {
       throw new Error(`Unexpected char "${firstChar}" is found.`);
@@ -47,7 +47,7 @@ class CSVParser {
     return item;
   }
 
-  nextChar(): string {
+  private nextChar(): string {
     this.cursor += 1;
     return this.text.charAt(this.cursor - 1);
   }
