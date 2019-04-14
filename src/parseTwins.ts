@@ -1,21 +1,25 @@
+import { parseCSV } from "./parseCSV";
+
 export function parseTwins(csvText: string): string[] {
   function generateError() {
     return new Error("Invalid CSV.");
   }
 
-  const splitted = csvText.split("\n");
+  const parsed = parseCSV(csvText);
 
-  if (splitted.length < 1) {
+  if (parsed.length < 1) {
     throw generateError();
   }
 
   const results: string[] = [];
-  for (let i = 0; i < splitted.length; i++) {
-    results[i] = splitted[i].replace(/\"/g, "");
 
-    if (!results[i].match(/^[A-Z0-9]{7}/)) {
+  for (let i = 0; i < parsed.length; i++) {
+    if (!parsed[i][0].match(/^[A-Z0-9]{7}/)) {
       throw generateError();
     }
+
+    results[i] = parsed[i][0];
   }
+
   return results;
 }
