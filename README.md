@@ -1,24 +1,25 @@
 # twins-parser
 
-twinsとkdbからダウンロードしたCSVのためのパーサーです。
+twins と kdb からダウンロードした CSV のためのパーサーです。
 
 ## インストール
 
-のちのちnpmにパブリッシュします。
+のちのち npm にパブリッシュします。
 
 ## ドキュメント
 
 ### `parseTwins(csvText: string): string[]`
 
-TwinsからダウンロードしたCSVの文字列を受け取って、科目番号の配列が返します。
+Twins からダウンロードした CSV の文字列を受け取って、科目番号の配列が返します。
 
 ### `parseKDB(csvText: string): Course[]`
-KDBからダウンロードしたCSVの文字列を受け取って、`Course`型の配列が返します。
-が、こちらは間違いなく仕様が変わるので実質WIP。
+
+KDB からダウンロードした CSV の文字列を受け取って、`Course`型の配列が返します。
+が、こちらは間違いなく仕様が変わるので実質 WIP。
 
 ## TODO
 
 - [ ] `parseKDB`のテストを書く
 - [ ] `parseKDB`のそれぞれの項目を文字列で返してるけどもう少し親切に返す
 - [ ] `parseKDB`のバリデーション
-- [ ] npmへのpublish
+- [ ] npm への publish

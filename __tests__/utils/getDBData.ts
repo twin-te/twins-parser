@@ -25,7 +25,7 @@ function decode(buffer: Buffer): string {
 }
 
 export default async function() {
-  const filename = path.join(__dirname, "..", "db", "kdb_20190413022300.csv");
+  const filename = path.join(__dirname, "..", "db", "kdb_20190414185835.csv");
   const buffer = await getfileContentOrNull(filename);
   return decode(buffer);
 }
