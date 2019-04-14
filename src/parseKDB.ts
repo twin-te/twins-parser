@@ -1,16 +1,16 @@
 import { parseCSV } from "./parseCSV";
 
 type Course = {
-  id: string;
-  title: string;
-  credit: string;
-  annuals: string;
-  terms: string;
-  periods: string;
-  rooms: string;
-  instructors: string;
-  overview: string;
-  remark: string;
+  courseNumber: string;
+  courseName: string;
+  credits: string;
+  year: string[];
+  term: string;
+  weekdayAndPeriod: string;
+  classRooms: string[];
+  instructors: string[];
+  courseOverview: string;
+  remarks: string;
 };
 
 export function parseKDB(csvText: string): Course[] {
@@ -18,17 +18,26 @@ export function parseKDB(csvText: string): Course[] {
   const courses: Course[] = [];
 
   for (const row of parsed) {
+    // Convert the year represented by a string like "1・2" into an array
+    const year = row[4].split("・");
+
+    // Convert the class rooms represented by a string like "4A304,3A204" into an array
+    const classRooms = row[7].split(",");
+
+    // Convert the class rooms represented by a string like "山田 太郎,田中 花子" into an array
+    const instructors = row[8].split(",");
+
     const course: Course = {
-      id: row[0],
-      title: row[1],
-      credit: row[3],
-      annuals: row[4],
-      terms: row[5],
-      periods: row[6],
-      rooms: row[7],
-      instructors: row[8],
-      overview: row[9],
-      remark: row[10]
+      courseNumber: row[0],
+      courseName: row[1],
+      credits: row[3],
+      year,
+      term: row[5],
+      weekdayAndPeriod: row[6],
+      classRooms,
+      instructors,
+      courseOverview: row[9],
+      remarks: row[10]
     };
 
     courses.push(course);
