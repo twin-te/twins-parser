@@ -1,6 +1,6 @@
 import { parseCSV } from "./lib/parseCSV";
 
-type Course = {
+export type Course = {
   courseNumber: string;
   courseName: string;
   credits: string;
